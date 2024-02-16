@@ -46,7 +46,14 @@ export const FirstSectionAddcart = () => {
                         </div>
                     ))}
                 </div>
-
+                <div className='flex flex-col gap-4 border-2 border-green-950 p-5 w-[30vw] relative left-[60vw] m-9'>
+                    <h1>Cart Total</h1>
+                    <div className='flex gap-4 items-center '>
+                        <h3>Subtotal:</h3>
+                        <h2>$20.00</h2>
+                    </div>
+                    <button className='h-[8vh] w-[20vw] rounded-3xl text-slate-50 p-3 bg-green-950'>PROCEED TO CHECK OUT</button>
+                </div>
                 </>
     )
 }
