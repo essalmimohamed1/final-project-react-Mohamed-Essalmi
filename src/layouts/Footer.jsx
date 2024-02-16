@@ -8,8 +8,8 @@ import { Link } from "react-router-dom";
 export const Footer = () => {
     return (
         <div className="bg-gray-200 flex flex-col  gap-5 p-3">
-            <div className="flex justify-around p-20 gap-9">
-                <div>
+            <div className="flex lg:flex flex-col lg:flex-row justify-around p-20  gap-9 lg:gap-9">
+                <div className="lg:flex lg:flex-col lg:gap-2 flex-col flex gap-2">
                     <h5>GET IN TOUCH</h5>
                     <p className="w-[30vw]">Any questions? Let us know in store at 8th floor, 379 Hudson St, New York, NY 10018 or call us on (+1) 96 716 6879</p>
                     <div className="flex gap-4 text-3xl text-gray-500">
@@ -50,8 +50,8 @@ export const Footer = () => {
                 <div className="flex flex-col gap-4">
                     <h5>NEWSLETER</h5>
                     <div className="flex flex-col gap-4">
-                        <input type="email" placeholder="Email Adress" className="border-b-2 bg-gray-200 border-gray-300 p-2 w-[22vw]" />
-                        <button className='bg-zinc-900 text-white h-[7vh] font-light text-2xl w-[17vw] rounded-3xl hover:bg-orange-600 hover:transition-all'>SUBCRIBE</button>
+                        <input type="email" placeholder="Email Adress" className="border-b-2 bg-gray-200 border-gray-300 p-2 w-[50vw] lg:w-[22vw]" />
+                        <button className='bg-zinc-900 text-white lg:h-[7vh] h-[8vh] w-[50vw] font-light text-2xl lg:w-[17vw] rounded-3xl hover:bg-orange-600 hover:transition-all'>SUBCRIBE</button>
                     </div>
                 </div>
             </div>

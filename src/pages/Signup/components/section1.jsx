@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import './section1.scss'
 
 
@@ -28,8 +29,8 @@ export const FirstSectionSignup = () => {
                     </div>
                 </div>
                 <div className='flex items-center gap-3 p-3'>
-                    <button className=' h-[6vh] w-[12vw] bg-stone-800 text-slate-100 '>CREATE</button>
-                    <p className='pt-3'> or Return to Store</p>
+                    <button className=' h-[6vh] w-[22vw] lg:w-[12vw] bg-stone-800 text-slate-100 '>CREATE</button>
+                    <Link to={`/`} className='pb-2 no-underline text-slate-950 hover:text-orange-500'> or Return to Store</Link>
                 </div>
             </div>
         </>

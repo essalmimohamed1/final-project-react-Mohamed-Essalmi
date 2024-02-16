@@ -19,14 +19,23 @@ import React from 'react';
 import Carousel from 'react-bootstrap/Carousel';
 
 export const FirstSectionHome = () => {
-    const [data, setData] = useContext(MyContext)
+    const [data, setData , basket,setbasket] = useContext(MyContext);
     const navigate = useNavigate()
     const product = [shopItem1 , banner03 , banner05]
     const random = Math.floor(Math.random() * product.length);
 
     
 
-
+    const add = (element) => {
+        const isInCart = basket.find(item => item.name === element.name);        
+        if (!isInCart) {
+            const newBasket = [...basket, element];
+            setbasket(newBasket);
+            console.log(basket);
+        } else {
+            console.log("Item is already in the cart.");
+        }
+    }
 
     const getrgory = data.filter((element, index) => {
 
@@ -61,28 +70,28 @@ export const FirstSectionHome = () => {
                         <Carousel.Item className='w-full'>
                             <div className='item1 flex flex-col justify-center items-center gap-3 text-white'>
                                 <p className='text-3xl'>Woemn Collection</p>
-                                <h1 className='text-7xl font-bold'>NEW ARRIVALS</h1>
-                                <button className='border rounded-full w-[12vw] p-2 bg-white  text-black font-light'>SHOP NOW</button>
+                                <h1 className='text-7xl p-9 text-center font-bold'>NEW ARRIVALS</h1>
+                                <button className='border rounded-full w-[50vw] lg:w-[12vw] p-2 bg-white  text-black font-light'>SHOP NOW</button>
                             </div>
                         </Carousel.Item>
                         <Carousel.Item>
                             <div className='item2 flex flex-col justify-center items-center gap-3 text-white'>
                                 <p className='text-3xl'>Woemn Collection</p>
-                                <h1 className='text-7xl font-bold'>NEW ARRIVALS</h1>
-                                <button className='border rounded-full w-[12vw] p-2 bg-white  text-black font-light'>SHOP NOW</button>
+                                <h1 className='text-7xl p-9 text-center font-bold'>NEW ARRIVALS</h1>
+                                <button className='border rounded-full w-[50vw] lg:w-[12vw] p-2 bg-white  text-black font-light'>SHOP NOW</button>
                             </div>
                         </Carousel.Item>
                         <Carousel.Item>
                             <div className='item3 flex flex-col justify-center items-center gap-3 text-white'>
                                 <p className='text-3xl'>Woemn Collection</p>
-                                <h1 className='text-7xl font-bold'>NEW ARRIVALS</h1>
-                                <button className='border rounded-full w-[12vw] p-2 bg-white  text-black font-light'>SHOP NOW</button>
+                                <h1 className='text-7xl p-9 text-center font-bold'>NEW ARRIVALS</h1>
+                                <button className='border rounded-full w-[50vw] lg:w-[12vw] p-2 bg-white  text-black font-light'>SHOP NOW</button>
                             </div>
                         </Carousel.Item>
                         </Carousel>
                 {/*  */}
                 <div>
-                        <div className='flex gap-8 p-20' >
+                        <div className='lg:flex lg:flex-row flex flex-col gap-8 p-20' >
                             <div className='flex flex-col w-[100%] gap-8 rounded '>
                                 <div className='overflow-hidden relative'>
                                     <img className=' hover:scale-110 duration-500' src={banner02} alt="" />
@@ -144,7 +153,7 @@ export const FirstSectionHome = () => {
                             active:border-b-[2px] active:brightness-90 active:translate-y-[2px] hover:shadow-xl hover:shadow-orange-300 shadow-orange-300 active:shadow-none`} >Old</Tab>
                         </TabList>
                         <TabPanel>
-                            <div className='flex gap-7 '>
+                            <div className='lg:flex lg:flex-row flex flex-col  gap-7 '>
                                     {
                                         getrgory.map((element, index) =>
                                             <div className='flex flex-col gap-2'>
@@ -156,7 +165,7 @@ export const FirstSectionHome = () => {
                                                         <div class=" w-72 absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70"></div>
                                                         <div class=" w-72 absolute inset-0 flex translate-y-[60%] flex-col items-center justify-center px-9 text-center transition-all duration-500 group-hover:translate-y-[40%]">
                                                             <button class="rounded-full bg-neutral-900 py-2 px-3.5 font-com text-sm capitalize shadow shadow-black/60 bg-gray-100 text-white hover:bg-red-500 hover:text-white duration-300"
-                                                            // onClick={() => add(element)}
+                                                            onClick={() => add(element)}
                                                             >ADD TO CART</button>
                                                         </div>
                                                     </div>
@@ -171,7 +180,7 @@ export const FirstSectionHome = () => {
                             </div>
                         </TabPanel>
                         <TabPanel>
-                        <div className='flex gap-6 p-3'>
+                        <div className='lg:flex lg:flex-row flex flex-col  gap-7 '>
                                     {
                                         getrgory1.map((element, index) =>
                                                 <div className='flex flex-col gap-2'>
@@ -183,7 +192,7 @@ export const FirstSectionHome = () => {
                                                         <div class=" w-72 absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70"></div>
                                                         <div class=" w-72 absolute inset-0 flex translate-y-[60%] flex-col items-center justify-center px-9 text-center transition-all duration-500 group-hover:translate-y-[40%]">
                                                             <button class="rounded-full bg-neutral-900 py-2 px-3.5 font-com text-sm capitalize shadow shadow-black/60 bg-gray-100 text-white hover:bg-red-500 hover:text-white duration-300"
-                                                            // onClick={() => add(element)}
+                                                            onClick={() => add(element)}
                                                             >ADD TO CART</button>
                                                         </div>
                                                     </div>
@@ -198,7 +207,7 @@ export const FirstSectionHome = () => {
                                 </div>
                         </TabPanel>
                         <TabPanel>
-                        <div className='flex gap-6 p-3'>
+                        <div className='lg:flex lg:flex-row flex flex-col  gap-7 '>
                                     {
                                         getrgory2.map((element, index) =>
                                             <div className='flex flex-col gap-2'>
@@ -210,7 +219,7 @@ export const FirstSectionHome = () => {
                                                     <div class=" w-72 absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70"></div>
                                                     <div class=" w-72 absolute inset-0 flex translate-y-[60%] flex-col items-center justify-center px-9 text-center transition-all duration-500 group-hover:translate-y-[40%]">
                                                         <button class="rounded-full bg-neutral-900 py-2 px-3.5 font-com text-sm capitalize shadow shadow-black/60 bg-gray-100 text-white hover:bg-red-500 hover:text-white duration-300"
-                                                        // onClick={() => add(element)}
+                                                        onClick={() => add(element)}
                                                         >ADD TO CART</button>
                                                     </div>
                                                 </div>

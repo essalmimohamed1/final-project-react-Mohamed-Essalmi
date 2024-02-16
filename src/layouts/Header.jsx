@@ -16,14 +16,14 @@ return (
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto text-xl flex gap-4">
-                        <Nav.Link href="/">Home</Nav.Link>
-                        <Nav.Link href="/Shop">Shop</Nav.Link>
-                        <Nav.Link href="/About"><span className='text-orange-500'>About</span></Nav.Link>
-                        <Nav.Link href="/Contact">Contact</Nav.Link>
+                        <Nav.Link onClick={() => navigate(`/`)}>Home</Nav.Link>
+                        <Nav.Link onClick={() => navigate(`/Shop`)}>Shop</Nav.Link>
+                        <Nav.Link onClick={() => navigate(`/About`)}><span className='text-orange-500'>About</span></Nav.Link>
+                        <Nav.Link onClick={() => navigate(`/Contact`)}>Contact</Nav.Link>
                     </Nav>
                     <div className='d-flex gap-3'>
                         <IoIosContact className='text-gray-400' onClick={() => navigate(`/Logain`)} size={42} />
-                        <IoIosCart className='border-l-2 border-gray-400 pl-2 text-gray-400' size={42} />
+                        <IoIosCart className='border-l-2  border-gray-400 pl-2 text-gray-400' onClick={() => navigate(`/Addcart`)} size={42} />
                     </div>
                 </Navbar.Collapse>
             </Container>

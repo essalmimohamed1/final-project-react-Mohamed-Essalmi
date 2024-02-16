@@ -5,7 +5,7 @@ import { MyContext } from '../../../utils/contextProvider';
 import { useNavigate } from 'react-router-dom';
 
 export const FirstSectionShop = () => {
-    const [data, setData] = useContext(MyContext);
+    const [data, setData , basket,setbasket] = useContext(MyContext);
     const navigate = useNavigate();
 
     const [categoryFilter, setCategoryFilter] = useState('All');
@@ -23,6 +23,18 @@ export const FirstSectionShop = () => {
     const handleSizeFilter = (size) => {
         setSizeFilter(size);
     };
+
+
+    const add = (element) => {
+        const isInCart = basket.find(item => item.name === element.name);        
+        if (!isInCart) {
+            const newBasket = [...basket, element];
+            setbasket(newBasket);
+            console.log(basket);
+        } else {
+            console.log("Item is already in the cart.");
+        }
+    }
 
     const filteredData = data.filter(element => {
         if (categoryFilter !== 'All' && element.category !== categoryFilter) {
@@ -44,11 +56,11 @@ export const FirstSectionShop = () => {
     return (
         <>
             <div>
-                <img src={img1} alt="" className='h-[35vh] relative' />
-                <h1 className='absolute top-[23vh] left-[40vw] text-white font-bold text-7xl'>PRODUCTS</h1>
+                <img src={img1} alt="" className='h-[35vh]  relative' />
+                <h1 className='absolute top-[25vh] left-[20vw] lg:top-[23vh] lg:left-[40vw] text-white font-bold text-7xl'>ABOUT</h1>
             </div>  
-            <div className='flex gap-14 p-2'>
-                <div className='flex flex-lg-column gap-6 w-[20vw] p-12'>
+            <div className='flex lg:flex lg:flex-row flex-col gap-14 p-2'>
+                <div className='flex flex-col gap-6 w-[20vw] p-12'>
                     <div className='flex flex-col gap-2'>
                         <h3>Categories</h3>
                         <div className='p-2'>
@@ -88,7 +100,7 @@ export const FirstSectionShop = () => {
                                                         <div class=" w-72 absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70"></div>
                                                         <div class=" w-72 absolute inset-0 flex translate-y-[60%] flex-col items-center justify-center px-9 text-center transition-all duration-500 group-hover:translate-y-[40%]">
                                                             <button class="rounded-full bg-neutral-900 py-2 px-3.5 font-com text-sm capitalize shadow shadow-black/60 bg-gray-100 text-white hover:bg-red-500 hover:text-white duration-300"
-                                                            // onClick={() => add(element)}
+                                                            onClick={() => add(element)}
                                                             >ADD TO CART</button>
                                                         </div>
                                                     </div>

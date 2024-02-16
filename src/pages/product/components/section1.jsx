@@ -61,7 +61,7 @@ export const FirstSectionProduct = () => {
                                             <div className='flex items-center gap-3 '>
                                                 <button onClick={() => setCount(count + 1)} className=' px-5 rounded-full text-2xl hover:bg-slate-200 duration-300'>+</button>
                                                 <h1>{count}</h1>
-                                                <button onClick={() => setCount(count - 1)} className=' px-5 rounded-full text-2xl hover:bg-slate-200 duration-300'>-</button>
+                                                <button onClick={() => setCount(count - 1)} disabled={count===1} className=' px-5 rounded-full text-2xl hover:bg-slate-200 duration-300'>-</button>
                                             </div>
                                         </div>
                                     </div>

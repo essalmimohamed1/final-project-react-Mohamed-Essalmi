@@ -6,11 +6,11 @@ export const FirstSectionAbout = () => {
     return (
         <>
             <div>
-                <img src={img1} alt="" className='h-[40vh] relative' />
-                <h1 className='absolute top-[25vh] left-[40vw] text-white font-bold text-7xl'>ABOUT</h1>
+                <img src={img1} alt="" className='h-[35vh]  relative' />
+                <h1 className='absolute top-[25vh] left-[20vw] lg:top-[23vh] lg:left-[40vw] text-white font-bold text-7xl'>ABOUT</h1>
             </div>
-            <div className='flex gap-9 p-11 '>
-                <img src={img2} className='h-[70vh] w-[28vw]' alt="" />
+            <div className='lg:flex lg:flex-row flex flex-col gap-9 p-11 '>
+                <img src={img2} className='h-[70vh] lg:w-[28vw] w-[90vw]' alt="" />
                 <div className='flex flex-col gap-2'>
                     <div className='flex flex-col gap-6'    >
                         <h1 className='text-gray-600'>Our story</h1>
