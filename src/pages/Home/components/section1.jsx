@@ -15,13 +15,17 @@ import { Link, useNavigate, useParams } from 'react-router-dom';
 import blog1 from '../../../assets/images/blog-01.jpg'
 import blog2 from '../../../assets/images/blog-02.jpg'
 import blog3 from '../../../assets/images/blog-03.jpg'
-
+import React from 'react';
+import Carousel from 'react-bootstrap/Carousel';
 
 export const FirstSectionHome = () => {
     const [data, setData] = useContext(MyContext)
     const navigate = useNavigate()
     const product = [shopItem1 , banner03 , banner05]
     const random = Math.floor(Math.random() * product.length);
+
+    
+
 
 
     const getrgory = data.filter((element, index) => {
@@ -48,8 +52,35 @@ export const FirstSectionHome = () => {
         } return element.category == 'OLD'
     }
     )
+
+    
     return (
-        <>
+        <>        
+                {/* Carousel */}
+                    <Carousel >
+                        <Carousel.Item className='w-full'>
+                            <div className='item1 flex flex-col justify-center items-center gap-3 text-white'>
+                                <p className='text-3xl'>Woemn Collection</p>
+                                <h1 className='text-7xl font-bold'>NEW ARRIVALS</h1>
+                                <button className='border rounded-full w-[12vw] p-2 bg-white  text-black font-light'>SHOP NOW</button>
+                            </div>
+                        </Carousel.Item>
+                        <Carousel.Item>
+                            <div className='item2 flex flex-col justify-center items-center gap-3 text-white'>
+                                <p className='text-3xl'>Woemn Collection</p>
+                                <h1 className='text-7xl font-bold'>NEW ARRIVALS</h1>
+                                <button className='border rounded-full w-[12vw] p-2 bg-white  text-black font-light'>SHOP NOW</button>
+                            </div>
+                        </Carousel.Item>
+                        <Carousel.Item>
+                            <div className='item3 flex flex-col justify-center items-center gap-3 text-white'>
+                                <p className='text-3xl'>Woemn Collection</p>
+                                <h1 className='text-7xl font-bold'>NEW ARRIVALS</h1>
+                                <button className='border rounded-full w-[12vw] p-2 bg-white  text-black font-light'>SHOP NOW</button>
+                            </div>
+                        </Carousel.Item>
+                        </Carousel>
+                {/*  */}
                 <div>
                         <div className='flex gap-8 p-20' >
                             <div className='flex flex-col w-[100%] gap-8 rounded '>
@@ -113,7 +144,7 @@ export const FirstSectionHome = () => {
                             active:border-b-[2px] active:brightness-90 active:translate-y-[2px] hover:shadow-xl hover:shadow-orange-300 shadow-orange-300 active:shadow-none`} >Old</Tab>
                         </TabList>
                         <TabPanel>
-                            <div className='flex gap-7 p-3'>
+                            <div className='flex gap-7 '>
                                     {
                                         getrgory.map((element, index) =>
                                             <div className='flex flex-col gap-2'>
@@ -199,7 +230,7 @@ export const FirstSectionHome = () => {
             <div className='flex justify-center p-4'>
                 <h1 className='text-4xl font-semibold'>FEATURED PRODUCTS</h1>
             </div>
-            <section className='p-14 flex gap-5 bg-[#F0F0F0]'>
+            <section className='p-14 sm:flex lg:flex sm:flex-col lg:flex-row lg:gap-5 sm:gap-5 bg-[#F0F0F0]'>
 
                 <div>
                         <div className='shadow-xl'>
@@ -245,7 +276,7 @@ export const FirstSectionHome = () => {
             <section className='p-20'>
 
                 <h1 className='text-center text-4xl font-semibold'>OUR BLOG</h1>
-                <div className='flex gap-8 py-10'>
+                <div className='sm:flex lg:flex lg:flex-row sm:flex-col  gap-8 py-10'>
                     <div className='flex  flex-col gap-4'>
                         <div className='overflow-hidden'>  
                             <img className='hover:scale-110 duration-500' src={blog1} alt="" />
@@ -279,18 +310,18 @@ export const FirstSectionHome = () => {
             </div>
             <section className='p-20'>
 
-                <div className='flex justify-around items-center'>
-                    <div>
+                <div className='sm:flex lg:flex  sm:flex-col lg:flex-row justify-around items-center'>
+                    <div className='flex flex-col items-center'>
                         <h1 className='font-light text-2xl text-center'>Free Delivery Worldwide</h1>
                         <p className='italic font-light'>Mirum est notare quam littera gothica</p>
                     </div>
 
-                    <div>
+                    <div className='flex flex-col items-center text-center'>
                         <h1 className='font-light text-2xl text-center'>30 Days Return</h1>
                         <p className='italic font-light'>Simply return it within 30 days for an exchange.</p>
                     </div>
 
-                    <div>
+                    <div className='flex flex-col items-center'>
                         <h1 className='font-light text-2xl text-center'>Store Opening</h1>
                         <p className='italic font-light'>Shop open from Monday to Sunday</p>
                     </div>

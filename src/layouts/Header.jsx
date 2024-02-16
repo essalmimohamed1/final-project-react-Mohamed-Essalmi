@@ -11,8 +11,8 @@ export const Header = () => {
 return (
     <>
         <Navbar expand="lg" className="bg-body-text-body-tertiary p-3">
-            <Container className='d-flex justify-content-between gap-80'>
-                <Navbar.Brand href="#home"><span className='text-4xl font-extrabold'>Fashe<span className='text-orange-400'>.</span></span></Navbar.Brand>
+            <Container className=' lg:flex lg:gap-80 sm:flex sm:flex-row sm:gap-0 lg:justify-between'>
+                <Navbar.Brand href="#home"><span className='text-4xl font-extrabold w-[25vw]'>Fashe<span className='text-orange-400'>.</span></span></Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto text-xl flex gap-4">
