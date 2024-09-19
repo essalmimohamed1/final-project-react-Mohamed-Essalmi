@@ -10,16 +10,16 @@ export const Header = () => {
     const navigate = useNavigate()
 return (
     <>
-        <Navbar expand="lg" className="bg-body-text-body-tertiary p-3">
+        <Navbar expand="lg" className="bg-body-text-body-tertiary p-3 bg-black">
             <Container className=' lg:flex lg:gap-80 sm:flex sm:flex-row sm:gap-0 lg:justify-between'>
-                <Navbar.Brand href="#home"><span className='text-4xl font-extrabold w-[25vw]'>Fashe<span className='text-orange-400'>.</span></span></Navbar.Brand>
+                <Navbar.Brand href="#home"><span className='text-white text-4xl font-extrabold w-[25vw]'>M<span className='text-green-500'>.Shop</span></span></Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
-                    <Nav className="me-auto text-xl flex gap-4">
-                        <Nav.Link onClick={() => navigate(`/`)}>Home</Nav.Link>
-                        <Nav.Link onClick={() => navigate(`/Shop`)}>Shop</Nav.Link>
-                        <Nav.Link onClick={() => navigate(`/About`)}><span className='text-orange-500'>About</span></Nav.Link>
-                        <Nav.Link onClick={() => navigate(`/Contact`)}>Contact</Nav.Link>
+                    <Nav className="me-auto text-xl flex gap-4 ">
+                        <Nav.Link className="text-white" onClick={() => navigate(`/`)}>Home</Nav.Link>
+                        <Nav.Link className="text-white" onClick={() => navigate(`/Shop`)}>Shop</Nav.Link>
+                        <Nav.Link className="text-white" onClick={() => navigate(`/About`)}><span className='text-green-500'>About</span></Nav.Link>
+                        <Nav.Link className="text-white" onClick={() => navigate(`/Contact`)}>Contact</Nav.Link>
                     </Nav>
                     <div className='d-flex gap-3'>
                         <IoIosContact className='text-gray-400' onClick={() => navigate(`/Logain`)} size={42} />
