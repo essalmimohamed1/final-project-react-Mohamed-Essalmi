@@ -72,7 +72,7 @@ export const FirstSectionShop = () => {
     return (
         <>
             <div>
-                <img src={img1} alt="" className='h-[40vh] w-[100vw]  relative' />
+                <img src={img1} alt="" className='h-[40vh] w-[100vw] object-cover  relative' />
             </div>  
 
             {/* Notification */}
