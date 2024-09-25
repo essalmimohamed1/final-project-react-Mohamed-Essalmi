@@ -18,7 +18,7 @@ function App() {
         <MyProvider>
             <Header/>
             <Routes >
-                <Route path='/' element={<Home />} />
+                <Route path='/final-project-react-Mohamed-Essalmi' element={<Home />} />
                 <Route path='/About' element={<About />} />
                 <Route path='/Contact' element={<Contact />} />
                 <Route path='/Shop' element={<Shop />} />
