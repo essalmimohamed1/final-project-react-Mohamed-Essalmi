@@ -192,18 +192,22 @@ export const FirstSectionShop = () => {
                 <div className='flex flex-wrap gap-4 justify-center lg:w-[80vw] w-full p-5'>
                     {filteredData.map((element, index) => (
                         <div className='flex flex-col gap-2 w-[250px]' key={index}>
+                            {/* Image Section */}
                             <div className="group relative cursor-pointer items-center justify-center overflow-hidden transition-shadow">
                                 <div className="h-96 w-full">
-                                    <img className="h-full w-full object-cover transition-transform respoMap duration-500 group-hover:rotate-3 group-hover:scale-125" src={element.img} alt="" />
+                                    <img className="h-full w-full object-cover transition-transform respoMap duration-500 group-hover:rotate-3 group-hover:scale-125" src={element.img} alt={element.name} />
                                 </div>
                                 <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70"></div>
-                                <div className="absolute inset-0 flex translate-y-[60%] flex-col items-center justify-center px-9 text-center transition-all duration-500 group-hover:translate-y-[40%]">
+                                {/* Button is now hidden on smaller screens */}
+                                <div className="absolute inset-0 hidden md:flex translate-y-[60%] flex-col items-center justify-center px-9 text-center transition-all duration-500 group-hover:translate-y-[40%]">
                                     <button className="rounded-full bg-neutral-900 py-2 px-3.5 text-sm capitalize shadow shadow-black/60 text-white hover:bg-green-500 duration-300"
                                     onClick={() => add(element)}>
                                     ADD TO CART
                                     </button>
                                 </div>
                             </div>
+
+                            {/* Product Details Section */}
                             <div className='flex flex-col bg-gray-900 p-6 rounded-lg hover:shadow-xl transition-all duration-300'>
                                 <h6 
                                     onClick={() => navigate(`/product/${element.name}`)} 
@@ -217,6 +221,13 @@ export const FirstSectionShop = () => {
                                     <p className='bg-gray-800 text-gray-300 text-sm px-4 py-1 rounded-full self-start'>
                                         Size: {element.size}
                                     </p>
+                                </div>
+                                {/* Button now appears here on smaller screens */}
+                                <div className="flex md:hidden justify-center mt-4">
+                                    <button className="rounded-full bg-green-900 py-2 px-3.5 text-sm capitalize shadow shadow-black/60 text-white hover:bg-green-500 duration-300"
+                                    onClick={() => add(element)}>
+                                    ADD TO CART
+                                    </button>
                                 </div>
                             </div>
                         </div>
