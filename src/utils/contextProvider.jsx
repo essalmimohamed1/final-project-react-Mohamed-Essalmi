@@ -24,7 +24,7 @@ export const MyContext = createContext()
 export const MyProvider = ({ children }) => {
     const [data, setData] = useState([
         {
-            name: 'Maillot Extérieur 24/25',
+            name: 'Maillot Extérieur (WG)',
             desc: 'Maillot Extérieur Black Raja Club Athletic UMBRO 24/25',
             img: product1,
             price: '50.00',
@@ -33,7 +33,7 @@ export const MyProvider = ({ children }) => {
         },
 
         {
-            name: 'Maillot Extérieur 24/25',
+            name: 'Maillot Extérieur (B)',
             desc: 'Maillot Extérieur Black Raja Club Athletic UMBRO 24/25',
             img: product2,
             price: '20.00',
@@ -43,7 +43,7 @@ export const MyProvider = ({ children }) => {
         },
 
         {
-            name: 'Maillot Extérieur 24/25',
+            name: 'Maillot Extérieur (G)',
             desc: 'Maillot Extérieur Black Raja Club Athletic UMBRO 24/25',
             img: product3,
             price: '50.00',
@@ -53,7 +53,7 @@ export const MyProvider = ({ children }) => {
         },
 
         {
-            name: 'MaillotUmbro ',
+            name: 'Maillot Umbro (W) ',
             desc: 'Maillot Pré-Match Raja Club Athletic Umbro ',
             img: product4,
             price: '70.00',
@@ -63,7 +63,7 @@ export const MyProvider = ({ children }) => {
 
 
         {
-            name: 'Maillot Umbro ',
+            name: 'Maillot (C) ',
             desc: 'Maillot Pré-Match Raja Club Athletic Umbro ',
             img : product5,
             price: '20.00',
@@ -73,7 +73,7 @@ export const MyProvider = ({ children }) => {
         },
 
         {
-            name: 'Maillot Umbro ',
+            name: 'Maillot Umbro (G)',
             desc: 'Maillot Pré-Match Raja Club Athletic Umbro ',
             img : product6,
             price: '50.00',
@@ -82,7 +82,7 @@ export const MyProvider = ({ children }) => {
         },
 
         {
-            name: 'Maillot Extérieur 24/25',
+            name: 'Maillot Extérieur (BY)',
             desc: 'Maillot Extérieur Black Raja Club Athletic UMBRO 24/25',
             img : product7,
             price: '70.00',
@@ -91,7 +91,7 @@ export const MyProvider = ({ children }) => {
         },
 
         {
-            name: 'Maillot Umbro ',
+            name: 'Maillot Umbro (B) ',
             desc: 'Maillot Pré-Match Raja Club Athletic Umbro ',
             img : product8,
             price: '20.00',
@@ -100,7 +100,7 @@ export const MyProvider = ({ children }) => {
         },
 
         {
-            name: 'Maillot Umbro ',
+            name: 'Maillot (B) ',
             desc: 'Maillot Pré-Match Raja Club Athletic Umbro ',
             img : product9,
             price: '40.00',
@@ -109,7 +109,7 @@ export const MyProvider = ({ children }) => {
         },
 
         {
-            name: 'Maillot Umbro ',
+            name: 'Maillot (W) ',
             desc: 'Maillot Pré-Match Raja Club Athletic Umbro ',
             img : product10,
             size: ['S', 'L', 'M', 'XS'],
@@ -117,7 +117,7 @@ export const MyProvider = ({ children }) => {
             category: 'OLD'
         },
         {
-            name: 'Maillot Umbro ',
+            name: 'Maillot (G) ',
             desc: 'Maillot Pré-Match Raja Club Athletic Umbro ',
             img : product11,
             size: ['S', 'L', 'M', 'XS'],
@@ -125,33 +125,12 @@ export const MyProvider = ({ children }) => {
             category: 'OLD'
         },
         {
-            name: 'Maillot Umbro ',
+            name: 'Maillot Umbro (N) ',
             desc: 'Maillot Pré-Match Raja Club Athletic Umbro ',
             size: ['S', 'L', 'M', 'XS'],
             img : product12,
             price: '120.00',
             category: 'SALE'
-        },
-        {
-            name: 'Maillot Umbro ',
-            desc: 'Maillot Pré-Match Raja Club Athletic Umbro ',
-            img : product13,
-            size: ['S', 'L', 'M', 'XS'],
-            price: '50.00',
-        },
-        {
-            name: 'Maillot Umbro ',
-            desc: 'Maillot Pré-Match Raja Club Athletic Umbro ',
-            size: ['S', 'L', 'M', 'XS'],
-            img : product14,
-            price: '20.00',
-        },
-        {
-            name: 'Maillot Umbro ',
-            desc: 'Maillot Pré-Match Raja Club Athletic Umbro ',
-            size: ['S', 'L', 'M', 'XS'],
-            img : product15,
-            price: '20.00',
         },
 
 

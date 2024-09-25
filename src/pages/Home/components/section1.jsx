@@ -17,6 +17,8 @@ import blog2 from '../../../assets/images/blogt2.png'
 import blog3 from '../../../assets/images/blogt4.png'
 import React from 'react';
 import Carousel from 'react-bootstrap/Carousel';
+import { useState } from 'react';
+
 
 export const FirstSectionHome = () => {
     const [data, setData , basket,setbasket] = useContext(MyContext);
@@ -24,7 +26,11 @@ export const FirstSectionHome = () => {
     const product = [shopItem1 , banner03 , banner05]
     const random = Math.floor(Math.random() * product.length);
 
-    
+    const [activeTab, setActiveTab] = useState('Sale');
+
+  // Function to handle tab click and set active tab
+  const handleTabClick = (tabName) => {
+    setActiveTab(tabName);}
 
     const add = (element) => {
         const isInCart = basket.find(item => item.name === element.name);        
@@ -90,53 +96,59 @@ export const FirstSectionHome = () => {
                         </Carousel.Item>
                         </Carousel>
                 {/*  */}
-                <div className='bg-stone-950'>
-                        <div className='lg:flex lg:flex-row flex flex-col gap-8 p-20' >
-                            <div className='flex flex-col w-[100%] gap-8 rounded '>
-                                <div className='overflow-hidden relative'>
-                                    <img className=' hover:scale-110 duration-500' src={banner02} alt="" />
-                                    <div className='flex justify-center'>
-                                        <button className='absolute bottom-9 bg-slate-100 hover:bg-green-600 px-14 py-3 opacity-95 text-xl font-light shadow-lg text-black  duration-500'>DRESSES</button>
-                                    </div>
-                                </div>
-                                <div className='overflow-hidden relative rounded '>
-                                    <img className=' hover:scale-110 duration-500' src={banner05} alt="" />
-                                    <div className='flex justify-center'>
-                                        <button className='absolute bottom-10 bg-slate-100 hover:bg-green-600 px-14 py-3 opacity-95 text-xl font-light shadow-lg text-black duration-500'>SUNGLASSES</button>
-                                    </div>
-                                </div>
+                <div className="bg-stone-950 py-16">
+                    <h2 className="text-white text-center text-3xl font-bold mb-10">Featured Collections</h2>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 px-6">
+                        {/* Item 1 */}
+                        <div className="relative group overflow-hidden rounded-lg shadow-lg">
+                            <img className="w-full h-72 object-cover group-hover:scale-105 transition-transform duration-500" src={banner02} alt="Footwear" />
+                            <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black via-transparent to-transparent p-4">
+                                <h2 className="text-white text-2xl font-bold">2024/2025</h2>
                             </div>
-                            <div className='flex flex-col w-[100%] gap-8 rounded  '>
-                                <div className='overflow-hidden relative'>
-                                    <img className='hover:scale-110 duration-500' src={banner03} alt="" />
-                                    <div className='flex justify-center'>
-                                        <button className='absolute bottom-10 bg-slate-100 px-14 py-3 opacity-95 text-xl font-light shadow-lg text-black hover:bg-green-600 duration-500'>WATCHES</button>
-                                    </div>
-                                </div>
-                                <div className='overflow-hidden relative rounded  '>
-                                    <img className='hover:scale-110 duration-500' src={banner07} alt="" />
-                                    <div className='flex justify-center'>
-                                        <button className='absolute bottom-9 bg-slate-50 px-14 py-3 opacity-95 text-xl font-light shadow-lg text-black hover:bg-green-600 duration-500'>FOOTERWEAR</button>
-                                    </div>
-                                </div>
+                        </div>
+                        
+                        {/* Item 2 */}
+                        <div className="relative group overflow-hidden rounded-lg shadow-lg">
+                            <img className="w-full h-72 object-cover group-hover:scale-105 transition-transform duration-500" src={banner05} alt="Sunglasses" />
+                            <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black via-transparent to-transparent p-4">
+                                <h2 className="text-white text-2xl font-bold">2023/2024</h2>
                             </div>
+                        </div>
 
-                            <div className='flex flex-col w-[100%] gap-8 rounded '>
-                                <div className='overflow-hidden relative'>
-                                    <img className='hover:scale-110 duration-500' src={banner04} alt="" />
-                                    <div className='flex justify-center'>
-                                        <button className='absolute bottom-9 bg-slate-100 px-20 py-4 opacity-95 text-xl font-light shadow-lg text-black hover:bg-green-600 duration-500'>BAGS</button>
-                                    </div>
-                                </div>
-                                <div className='overflow-hidden relative rounded '>
-                                    <img className='hover:scale-110 duration-500' src={banner09} alt="" />
-                                    <div className='flex justify-center'>
-                                        <button className='absolute bottom-10 bg-slate-100 px-14 py-3 opacity-95 text-xl font-light shadow-lg text-black hover:bg-green-600 duration-500'>ACCESORIES</button>
-                                    </div>
-                                </div>
+                        {/* Item 3 */}
+                        <div className="relative group overflow-hidden rounded-lg shadow-lg">
+                            <img className="w-full h-72 object-cover group-hover:scale-105 transition-transform duration-500" src={banner03} alt="Footwear" />
+                            <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black via-transparent to-transparent p-4">
+                                <h2 className="text-white text-2xl font-bold">2023/2024</h2>
+                            </div>
+                        </div>
+
+                        {/* Item 4 */}
+                        <div className="relative group overflow-hidden rounded-lg shadow-lg">
+                            <img className="w-full h-72 object-cover group-hover:scale-105 transition-transform duration-500" src={banner07} alt="Accessories" />
+                            <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black via-transparent to-transparent p-4">
+                                <h2 className="text-white text-2xl font-bold">2023/2024</h2>
+                            </div>
+                        </div>
+
+                        {/* Item 5 */}
+                        <div className="relative group overflow-hidden rounded-lg shadow-lg">
+                            <img className="w-full h-72 object-cover group-hover:scale-105 transition-transform duration-500" src={banner04} alt="Accessories" />
+                            <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black via-transparent to-transparent p-4">
+                                <h2 className="text-white text-2xl font-bold">2024/2025</h2>
+                            </div>
+                        </div>
+
+                        {/* Item 6 */}
+                        <div className="relative group overflow-hidden rounded-lg shadow-lg">
+                            <img className="w-full h-72 object-cover group-hover:scale-105 transition-transform duration-500" src={banner09} alt="Accessories" />
+                            <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black via-transparent to-transparent p-4">
+                                <h2 className="text-white text-2xl font-bold">2024/2025</h2>
                             </div>
                         </div>
                     </div>
+                </div>
+
 
                     <div className='flex justify-center p-4 bg-black text-white'>
                         <h1 className='text-4xl font-semibold'>FEATURED PRODUCTS</h1>
@@ -144,14 +156,49 @@ export const FirstSectionHome = () => {
 
                     <div className='flex justify-center w-full p-4 bg-black'>
                     <Tabs aria-label="Tabs with " style={{textDecoration: ''}} className='flex flex-col items-center gap-3 justify-center w-full'>
-                        <TabList className={' flex gap-4 text-2xl'}>
-                            <Tab className={`cursor-pointer transition-all text-black bg-green-500 text-blac px-6 py-2 rounded-lgborder-green-500 border-b-[4px] hover:brightness-110 hover:-translate-y-[1px] hover:border-b-[6px]
-                            active:border-b-[2px] active:brightness-90 active:translate-y-[2px] hover:shadow-xl hover:shadow-green-300 shadow-green-300 active:shadow-none`}>Sale</Tab>
-                            <Tab className={`cursor-pointer transition-all bg-green-500 text-black  px-6 py-2 rounded-lgborder-green-500 border-b-[4px] hover:brightness-110 hover:-translate-y-[1px] hover:border-b-[6px]
-                            active:border-b-[2px] active:brightness-90 active:translate-y-[2px] hover:shadow-xl hover:shadow-green-300 shadow-green-300 active:shadow-none`}>New</Tab>
-                            <Tab className={`cursor-pointer transition-all bg-green-500 text-black  px-6 py-2 rounded-lgborder-green-500 border-b-[4px] hover:brightness-110 hover:-translate-y-[1px] hover:border-b-[6px]
-                            active:border-b-[2px] active:brightness-90 active:translate-y-[2px] hover:shadow-xl hover:shadow-green-300 shadow-green-300 active:shadow-none`} >Old</Tab>
-                        </TabList>
+                            <TabList className="flex gap-4 text-lg font-medium">
+                            {/* Sale Tab */}
+                            <Tab
+                                onClick={() => handleTabClick('Sale')}
+                                className={`cursor-pointer transition-all px-6 py-2 rounded-full
+                                ${
+                                    activeTab === 'Sale'
+                                    ? 'bg-green-600 text-white border-b-4 border-green-700 shadow-lg'
+                                    : 'bg-gray-100 text-gray-700 border-b-4 border-transparent hover:bg-green-100 hover:text-green-700 hover:border-green-500'
+                                }
+                                hover:shadow-lg active:translate-y-1`}
+                            >
+                                Sale
+                            </Tab>
+
+                            {/* New Tab */}
+                            <Tab
+                                onClick={() => handleTabClick('New')}
+                                className={`cursor-pointer transition-all px-6 py-2 rounded-full
+                                ${
+                                    activeTab === 'New'
+                                    ? 'bg-green-600 text-white border-b-4 border-green-700 shadow-lg'
+                                    : 'bg-gray-100 text-gray-700 border-b-4 border-transparent hover:bg-green-100 hover:text-green-700 hover:border-green-500'
+                                }
+                                hover:shadow-lg active:translate-y-1`}
+                            >
+                                New
+                            </Tab>
+
+                            {/* Old Tab */}
+                            <Tab
+                                onClick={() => handleTabClick('Old')}
+                                className={`cursor-pointer transition-all px-6 py-2 rounded-full
+                                ${
+                                    activeTab === 'Old'
+                                    ? 'bg-green-600 text-white border-b-4 border-green-700 shadow-lg'
+                                    : 'bg-gray-100 text-gray-700 border-b-4 border-transparent hover:bg-green-100 hover:text-green-700 hover:border-green-500'
+                                }
+                                hover:shadow-lg active:translate-y-1`}
+                            >
+                                Old
+                            </Tab>
+                            </TabList>
                         <TabPanel>
                             <div className='lg:flex lg:flex-row flex flex-col  gap-7 '>
                                     {
@@ -163,16 +210,11 @@ export const FirstSectionHome = () => {
                                                             <img class="h-full w-full object-cover transition-transform respoMap duration-500 group-hover:rotate-3 group-hover:scale-125" src={element.img} alt="" />
                                                         </div>
                                                         <div class=" w-72 absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70"></div>
-                                                        <div class=" w-72 absolute inset-0 flex translate-y-[60%] flex-col items-center justify-center px-9 text-center transition-all duration-500 group-hover:translate-y-[40%]">
-                                                            <button class="rounded-full bg-neutral-900 py-2 px-3.5 font-com text-sm capitalize shadow shadow-black/60 bg-gray-100 text-white hover:bg-red-500 hover:text-white duration-300"
-                                                            onClick={() => add(element)}
-                                                            >ADD TO CART</button>
-                                                        </div>
                                                     </div>
                                                 </div>
                                                 <div className='flex flex-col'>
                                                     <h6 onClick={() => navigate(`/product/${element.name}`)} className=' no-underlin text-gray-400 hover:text-orange-400 duration-600' >{element.name}</h6>
-                                                    <p className='text-gray-600'>{element.price}</p>    
+                                                    <p className='text-gray-400'>{element.price}DH</p>    
                                                 </div>
                                             </div>
                                         )
@@ -190,16 +232,11 @@ export const FirstSectionHome = () => {
                                                             <img class="h-full w-full object-cover transition-transform respoMap duration-500 group-hover:rotate-3 group-hover:scale-125" src={element.img} alt="" />
                                                         </div>
                                                         <div class=" w-72 absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70"></div>
-                                                        <div class=" w-72 absolute inset-0 flex translate-y-[60%] flex-col items-center justify-center px-9 text-center transition-all duration-500 group-hover:translate-y-[40%]">
-                                                            <button class="rounded-full bg-neutral-900 py-2 px-3.5 font-com text-sm capitalize shadow shadow-black/60 bg-gray-100 text-white hover:bg-red-500 hover:text-white duration-300"
-                                                            onClick={() => add(element)}
-                                                            >ADD TO CART</button>
-                                                        </div>
                                                     </div>
                                                 </div>
                                                 <div className='flex flex-col'>
                                                     <h6 onClick={() => navigate(`/product/${element.name}`)} className=' no-underline hover:text-orange-400 duration-300 text-gray-400' >{element.name}</h6>
-                                                    <p className='text-gray-400'>{element.price}</p>    
+                                                    <p className='text-gray-400'>{element.price}DH</p>    
                                                 </div>
                                             </div>
                                         )
@@ -217,16 +254,11 @@ export const FirstSectionHome = () => {
                                                         <img class="h-full w-full object-cover transition-transform respoMap duration-500 group-hover:rotate-3 group-hover:scale-125" src={element.img} alt="" />
                                                     </div>
                                                     <div class=" w-72 absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70"></div>
-                                                    <div class=" w-72 absolute inset-0 flex translate-y-[60%] flex-col items-center justify-center px-9 text-center transition-all duration-500 group-hover:translate-y-[40%]">
-                                                        <button class="rounded-full bg-neutral-900 py-2 px-3.5 font-com text-sm capitalize shadow shadow-black/60 bg-gray-100 text-white hover:bg-red-500 hover:text-white duration-300"
-                                                        onClick={() => add(element)}
-                                                        >ADD TO CART</button>
-                                                    </div>
                                                 </div>
                                             </div>
                                                 <div className='flex flex-col'>
                                                     <h6 onClick={() => navigate(`/product/${element.name}`)} className=' no-underline hover:text-orange-400 duration-300 text-gray-400' >{element.name}</h6>
-                                                    <p className='text-gray-400'>{element.price}</p>    
+                                                    <p className='text-gray-400'>{element.price}DH</p>    
                                                 </div>
                                             </div>
                                         )
@@ -235,7 +267,7 @@ export const FirstSectionHome = () => {
                         </TabPanel>
                     </Tabs>
                 </div>
-            <section className='p-20 bg-black'>
+            <section className='p-5 bg-black'>
 
                 <h1 className='text-center text-4xl font-semibold bg-black text-white'>OUR BLOG</h1>
                 <div className='sm:flex lg:flex lg:flex-row sm:flex-col  gap-8 py-10'>
@@ -243,32 +275,38 @@ export const FirstSectionHome = () => {
                         <div className='overflow-hidden'>  
                             <img className='hover:scale-110 duration-500' src={blog1} alt="" />
                         </div>
-                        <h1 className='text-2xl text-yellow-500'>Black Friday Guide: Best Sales & Discount Codes</h1>
-                        <p className='text-gray-300 font-light'>by fashe-theme Admin on Dec 28,2017</p>
-                        <p className='text-gray-400 font-light w-[90%]'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sed turpis sed lorem dignissim vulputate nec cursus ante. Nunc sit...</p>
+                        <div>
+                            <h1 className='text-2xl text-yellow-500'>Black Friday Guide: Best Sales & Discount Codes</h1>
+                            <p className='text-gray-300 font-light'>by fashe-theme Admin on Dec 28,2017</p>
+                            <p className='text-gray-400 font-light w-[90%]'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sed turpis sed lorem dignissim vulputate nec cursus ante. Nunc sit...</p>
+                        </div>
                     </div>
 
                     <div className='flex flex-col gap-4'>
                     <div className='overflow-hidden'>  
                             <img className='hover:scale-110 duration-500' src={blog2} alt="" />
                         </div>
-                        <h1 className='text-2xl text-yellow-500'>Black Friday Guide: Best Sales & Discount Codes</h1>
-                        <p className='text-gray-300 font-light'>by fashe-theme Admin on Dec 28,2017</p>
-                        <p className='text-gray-400 font-light w-[90%]'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sed turpis sed lorem dignissim vulputate nec cursus ante. Nunc sit...</p>
+                        <div>
+                            <h1 className='text-2xl text-yellow-500'>Black Friday Guide: Best Sales & Discount Codes</h1>
+                            <p className='text-gray-300 font-light'>by fashe-theme Admin on Dec 28,2017</p>
+                            <p className='text-gray-400 font-light w-[90%]'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sed turpis sed lorem dignissim vulputate nec cursus ante. Nunc sit...</p>
+                        </div>                    
                     </div>
 
                     <div className='flex flex-col gap-4'>
                         <div className='overflow-hidden'>  
                             <img className='hover:scale-110 duration-500' src={blog3} alt="" />
                         </div>
-                        <h1 className='text-2xl text-yellow-500'>Black Friday Guide: Best Sales & Discount Codes</h1>
-                        <p className='text-gray-300 font-light'>by fashe-theme Admin on Dec 28,2017</p>
-                        <p className='text-gray-400 font-light w-[90%]'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sed turpis sed lorem dignissim vulputate nec cursus ante. Nunc sit...</p>
+                        <div>
+                            <h1 className='text-2xl text-yellow-500'>Black Friday Guide: Best Sales & Discount Codes</h1>
+                            <p className='text-gray-300 font-light'>by fashe-theme Admin on Dec 28,2017</p>
+                            <p className='text-gray-400 font-light w-[90%]'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sed turpis sed lorem dignissim vulputate nec cursus ante. Nunc sit...</p>
+                        </div>                    
                     </div>
                 </div>
             </section>
             
-            <section className='p-20 flex flex-col gap-4 bg-black text-white'>
+            <section className='p-5 flex flex-col gap-4 bg-black text-white'>
                 <div>
                     <h1 className='text-center text-4xl font-bold  bg-black text-white'>@ FOLLOW US ON INSTAGRAM</h1>
                 </div>

@@ -7,9 +7,9 @@ import { Link } from "react-router-dom";
 
 export const Footer = () => {
     return (
-        <div className="bg-gray-200 flex flex-col  gap-5 p-3">
-            <div className="flex lg:flex flex-col lg:flex-row justify-around p-20  gap-9 lg:gap-9">
-                <div className="lg:flex lg:flex-col lg:gap-2 flex-col flex gap-2">
+        <div className="bg-gray-200 flex flex-col   ">
+            <div className="flex lg:flex flex-col lg:flex-row justify-around p-10  gap-9 lg:gap-9">
+                <div className="lg:flex lg:flex-col lg:gap-2 flex-col flex gap-1">
                     <h5>GET IN TOUCH</h5>
                     <p className="w-[30vw]">Any questions? Let us know in store at 8th floor, 379 Hudson St, New York, NY 10018 or call us on (+1) 96 716 6879</p>
                     <div className="flex gap-4 text-3xl text-gray-500">
@@ -20,7 +20,7 @@ export const Footer = () => {
                         <FaInstagram />
                     </div>
                 </div>
-                <div className="flex flex-col gap-5">
+                <div className="flex flex-col gap-1">
                     <h5>CATEGORIES</h5>
                     <div className="flex flex-col  gap-2">
                         <Link className="text-decoration-none text-gray-500">Men</Link>
@@ -29,7 +29,7 @@ export const Footer = () => {
                         <Link className="text-decoration-none text-gray-500">Sunglasses</Link>
                     </div>
                 </div>
-                <div className="flex flex-col gap-5">
+                <div className="flex flex-col gap-1">
                     <h5>LINKS</h5>
                     <div className="flex flex-col  gap-2">
                         <Link className="text-decoration-none text-gray-500">Search</Link>
@@ -38,7 +38,7 @@ export const Footer = () => {
                         <Link className="text-decoration-none text-gray-500">Returns</Link>
                     </div>
                 </div>
-                <div className="flex flex-col gap-5">
+                <div className="flex flex-col gap-1">
                     <h5>HELP</h5>
                     <div className="flex flex-col  gap-2">
                         <Link className="text-decoration-none text-gray-500">Track Order</Link>
@@ -47,7 +47,7 @@ export const Footer = () => {
                         <Link className="text-decoration-none text-gray-500">FAQs</Link>
                     </div>
                 </div>
-                <div className="flex flex-col gap-4">
+                <div className="flex flex-col gap-1">
                     <h5>NEWSLETER</h5>
                     <div className="flex flex-col gap-4">
                         <input type="email" placeholder="Email Adress" className="border-b-2 bg-gray-200 border-gray-300 p-2 w-[50vw] lg:w-[22vw]" />
@@ -55,8 +55,8 @@ export const Footer = () => {
                     </div>
                 </div>
             </div>
-            <div className="p-3">
-                <p className="text-gray-500 text-center">Copyright © 2022 Shopify Theme Developed by MassTechnologist All rights reserved.</p>
+            <div className="">
+                <p className="text-slate-900 text-center">Copyright © 2022 Shopify Theme Developed by MassTechnologist All rights reserved.</p>
             </div>
         </div>
     );

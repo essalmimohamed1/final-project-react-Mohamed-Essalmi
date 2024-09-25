@@ -1,34 +1,77 @@
+import React, { useContext } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import { IoIosContact } from "react-icons/io";
-import { IoIosCart } from "react-icons/io";
-import React from "react";
-import { useNavigate } from "react-router-dom";
+import { IoIosContact, IoIosCart } from "react-icons/io";
+import logo from "../assets/images/LogoRca.jpg";
+import { MyContext } from '../utils/contextProvider';
 
 export const Header = () => {
-    const navigate = useNavigate()
-return (
-    <>
-        <Navbar expand="lg" className="bg-body-text-body-tertiary p-3 bg-black">
-            <Container className=' lg:flex lg:gap-80 sm:flex sm:flex-row sm:gap-0 lg:justify-between'>
-                <Navbar.Brand href="#home"><span className='text-white text-4xl font-extrabold w-[25vw]'>M<span className='text-green-500'>.Shop</span></span></Navbar.Brand>
+    const contextValue = useContext(MyContext);
+
+    // Always call hooks at the top level
+    const navigate = useNavigate();
+    const location = useLocation();
+
+    if (!contextValue) {
+        console.error("MyContext is not available!");
+        return null; // Or handle it in a way that suits your application
+    }
+
+    const [data, setData, basket, setBasket] = contextValue;
+
+    const handleNavigate = (path) => {
+        navigate(path);
+    };
+
+    const isActive = (path) => {
+        return location.pathname === path;
+    };
+
+    return (
+        <Navbar expand="lg" className="bg-black">
+            <Container className='lg:flex lg:gap-80 sm:flex sm:flex-row sm:gap-0 lg:justify-between'>
+                <Navbar.Brand href="">
+                    <img width={`60vw`} src={logo} alt="Logo" />
+                </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
-                    <Nav className="me-auto text-xl flex gap-4 ">
-                        <Nav.Link className="text-white" onClick={() => navigate(`/`)}>Home</Nav.Link>
-                        <Nav.Link className="text-white" onClick={() => navigate(`/Shop`)}>Shop</Nav.Link>
-                        <Nav.Link className="text-white" onClick={() => navigate(`/About`)}><span className='text-green-500'>About</span></Nav.Link>
-                        <Nav.Link className="text-white" onClick={() => navigate(`/Contact`)}>Contact</Nav.Link>
+                    <Nav className="me-auto text-xl flex gap-4">
+                        <Nav.Link className={`text-white ${isActive('/') ? "text-green-500" : ""}`} onClick={() => handleNavigate(`/`)}>
+                            <span className={isActive('/') ? "text-green-500" : "text-white"}>Home</span>
+                        </Nav.Link>
+                        <Nav.Link className={`text-white ${isActive('/Shop') ? "text-green-500" : ""}`} onClick={() => handleNavigate(`/Shop`)}>
+                            <span className={isActive('/Shop') ? "text-green-500" : "text-white"}>Shop</span>
+                        </Nav.Link>
+                        <Nav.Link className={`text-white ${isActive('/About') ? "text-green-500" : ""}`} onClick={() => handleNavigate(`/About`)}>
+                            <span className={isActive('/About') ? "text-green-500" : "text-white"}>About</span>
+                        </Nav.Link>
+                        <Nav.Link className={`text-white ${isActive('/Contact') ? "text-green-500" : ""}`} onClick={() => handleNavigate(`/Contact`)}>
+                            <span className={isActive('/Contact') ? "text-green-500" : "text-white"}>Contact</span>
+                        </Nav.Link>
                     </Nav>
                     <div className='d-flex gap-3'>
-                        <IoIosContact className='text-gray-400' onClick={() => navigate(`/Logain`)} size={42} />
-                        <IoIosCart className='border-l-2  border-gray-400 pl-2 text-gray-400' onClick={() => navigate(`/Addcart`)} size={42} />
+                        <IoIosContact
+                            className='text-gray-400 cursor-pointer'
+                            onClick={() => handleNavigate(`/Logain`)}
+                            size={42}
+                        />
+                        <div className="relative">
+                            <IoIosCart
+                                className="border-l-2 border-gray-400 pl-2 text-gray-400 cursor-pointer"
+                                onClick={() => handleNavigate(`/Addcart`)}
+                                size={42}
+                            />
+                            {basket.length > 0 && (
+                                <span className="absolute top-0 right-0 bg-green-500 text-white rounded-full px-2 text-xs">
+                                    {basket.length}
+                                </span>
+                            )}
+                        </div>
                     </div>
                 </Navbar.Collapse>
             </Container>
         </Navbar>
-    </>
-    
-  );
+    );
 };

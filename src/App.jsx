@@ -15,8 +15,8 @@ import { Addcart } from './pages/Addcart/Addcart.jsx';
 function App() {
     return (
         <>
-        <Header/>
         <MyProvider>
+            <Header/>
             <Routes >
                 <Route path='/' element={<Home />} />
                 <Route path='/About' element={<About />} />
