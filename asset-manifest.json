@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/final-project-react-Mohamed-Essalmi/static/css/main.2728519e.css",
-    "main.js": "/final-project-react-Mohamed-Essalmi/static/js/main.9476aaa6.js",
+    "main.js": "/final-project-react-Mohamed-Essalmi/static/js/main.b1cbd2c4.js",
     "static/media/blogt3.png": "/final-project-react-Mohamed-Essalmi/static/media/blogt3.3703477eb48ec57fe8c0.png",
     "static/media/polos-0001-calque-3.png": "/final-project-react-Mohamed-Essalmi/static/media/polos-0001-calque-3.3703477eb48ec57fe8c0.png",
     "static/media/blogt1.png": "/final-project-react-Mohamed-Essalmi/static/media/blogt1.17d3dd1b35fb28880847.png",
@@ -33,10 +33,10 @@
     "static/media/shop-item-09.jpg": "/final-project-react-Mohamed-Essalmi/static/media/shop-item-09.1b4c3a090e6f7ad533a7.jpg",
     "index.html": "/final-project-react-Mohamed-Essalmi/index.html",
     "main.2728519e.css.map": "/final-project-react-Mohamed-Essalmi/static/css/main.2728519e.css.map",
-    "main.9476aaa6.js.map": "/final-project-react-Mohamed-Essalmi/static/js/main.9476aaa6.js.map"
+    "main.b1cbd2c4.js.map": "/final-project-react-Mohamed-Essalmi/static/js/main.b1cbd2c4.js.map"
   },
   "entrypoints": [
     "static/css/main.2728519e.css",
-    "static/js/main.9476aaa6.js"
+    "static/js/main.b1cbd2c4.js"
   ]
 }
