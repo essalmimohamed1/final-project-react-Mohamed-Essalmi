@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/final-project-react-Mohamed-Essalmi/static/css/main.852e4a74.css",
-    "main.js": "/final-project-react-Mohamed-Essalmi/static/js/main.f3aa5ba1.js",
+    "main.css": "/final-project-react-Mohamed-Essalmi/static/css/main.2728519e.css",
+    "main.js": "/final-project-react-Mohamed-Essalmi/static/js/main.5409bec1.js",
     "static/media/blogt3.png": "/final-project-react-Mohamed-Essalmi/static/media/blogt3.3703477eb48ec57fe8c0.png",
     "static/media/polos-0001-calque-3.png": "/final-project-react-Mohamed-Essalmi/static/media/polos-0001-calque-3.3703477eb48ec57fe8c0.png",
     "static/media/blogt1.png": "/final-project-react-Mohamed-Essalmi/static/media/blogt1.17d3dd1b35fb28880847.png",
@@ -32,11 +32,11 @@
     "static/media/LogoRca.jpg": "/final-project-react-Mohamed-Essalmi/static/media/LogoRca.ff4455b703e3fbe764d6.jpg",
     "static/media/shop-item-09.jpg": "/final-project-react-Mohamed-Essalmi/static/media/shop-item-09.1b4c3a090e6f7ad533a7.jpg",
     "index.html": "/final-project-react-Mohamed-Essalmi/index.html",
-    "main.852e4a74.css.map": "/final-project-react-Mohamed-Essalmi/static/css/main.852e4a74.css.map",
-    "main.f3aa5ba1.js.map": "/final-project-react-Mohamed-Essalmi/static/js/main.f3aa5ba1.js.map"
+    "main.2728519e.css.map": "/final-project-react-Mohamed-Essalmi/static/css/main.2728519e.css.map",
+    "main.5409bec1.js.map": "/final-project-react-Mohamed-Essalmi/static/js/main.5409bec1.js.map"
   },
   "entrypoints": [
-    "static/css/main.852e4a74.css",
-    "static/js/main.f3aa5ba1.js"
+    "static/css/main.2728519e.css",
+    "static/js/main.5409bec1.js"
   ]
 }
