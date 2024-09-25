@@ -151,7 +151,7 @@ export const FirstSectionHome = () => {
 
 
                     <div className='flex lg:text-center justify-center p-4 bg-black text-white'>
-                        <h1 className='text-4xl font-semibold lg:w-[50vw] w-[100vw]'>FEATURED PRODUCTS</h1>
+                        <h1 className='text-3xl font-semibold w-full'>FEATURED PRODUCTS</h1>
                     </div>
 
                     <div className='flex justify-center w-full p-4 bg-black'>
