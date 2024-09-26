@@ -56,7 +56,7 @@ export const Footer = () => {
                 </div>
             </div>
             <div className="">
-                <p className="text-slate-900 text-center">Copyright © 2022 Shopify Theme Developed by MassTechnologist All rights reserved.</p>
+                <p className="text-slate-900 text-center">Copyright © Theme Developed by Essalmi Mohamed.</p>
             </div>
         </div>
     );
